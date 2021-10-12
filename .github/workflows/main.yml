@@ -33,4 +33,5 @@ jobs:
       - name: Clone and list repo
 
         run: git clone https://github.com/baxtmann/elonplshurryupwithstarlink.net
+      - name: something else
         run: ls
