@@ -15,14 +15,8 @@ jobs:
     - uses: actions/checkout@v1
     - run: npm ci
     - uses: nelonoel/branch-name@v1
-
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: rez0n/create-dns-record@v2.1
-        with:
+    - uses: rez0n/create-dns-record@v2.1
+      with:
           type: "A"
           name: ${BRANCH_NAME}".elonplshurryupwithstarlink.net"
           content: "76.70.117.230"
@@ -30,15 +24,6 @@ jobs:
           proxied: true
           token: ${{ secrets.CLOUDFLARE_TOKEN }}
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
-
-
-
-
-jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
-    steps:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
